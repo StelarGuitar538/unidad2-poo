@@ -23,7 +23,7 @@ class GestorReserva:
         fecha = input("ingrese fecha: ")
         for r in self.__reservas:
             cd = int(r.getCantidadDias())
-            importDiario = float(gc.buscarImportePorDia(r.getNumeroCabana()))
+            importDiario = gc.buscarImportePorDia(r.getNumeroCabana())
             sena = int(r.getSena())
             importeTotal = importDiario * cd - sena
             if r.getFechaInicio() == fecha:

@@ -41,6 +41,7 @@ class GestorCabana:
     def buscarImportePorDia(self, num):
         i=0
         while i < len(self.__arregloCabanas) and self.__arregloCabanas[i].getNumero() == num:
-            print(self.__arregloCabanas[i].getImportePorDia())
             i+=1
+        return self.__arregloCabanas[i].getImportePorDia()    
+            
         
