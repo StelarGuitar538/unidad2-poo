@@ -5,7 +5,7 @@ class gestorNacimientos:
     __lista: list
     def __init__(self):
         self.__lista = []
-        archivo = open("Nacimientos.csv")
+        archivo = open("po 1 recu/po 1 recu/Nacimientos.csv")
         reader = csv.reader(archivo, delimiter=';')
         for fila in reader:
             dni = int(fila[0])
@@ -17,6 +17,7 @@ class gestorNacimientos:
             nacimiento = Nacimiento(dni, tipo, fecha, hora, peso, altura)
             self.__lista.append(nacimiento)
         archivo.close()
+        
     def MostrarNacimientos(self, dni):
         i=0
         band=0
@@ -27,8 +28,8 @@ class gestorNacimientos:
                     print("Bebé/s: \n  Peso:          Altura:")
                 print(f"  {self.__lista[i].ObtenerPeso()}          {self.__lista[i].ObtenerAltura()}")
                 band=1
-    def ObtenerLista(self):
-        return self.__lista
+                
+
     def PartosMultiples(self, dni):
         i = 0
         c = 0

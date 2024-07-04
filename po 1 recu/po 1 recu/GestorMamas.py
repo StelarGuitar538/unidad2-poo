@@ -12,7 +12,7 @@ class gestorMamas:
         self.__dimension=16
         self.__cantidad=0
         self.__arreglo = np.empty(self.__dimension, dtype=Mama)
-        archivo = open("Mamas.csv")
+        archivo = open("po 1 recu/po 1 recu/Mamas.csv")
         reader = csv.reader(archivo, delimiter=';')
         for fila in reader:
             if self.__cantidad==self.__dimension:
@@ -25,16 +25,16 @@ class gestorMamas:
             self.__arreglo[self.__cantidad]=mama
             self.__cantidad+=1
         archivo.close()
+        
     def BuscarMama(self, dni, gestorNacimientos):
-        i=0
-        while (dni != self.__arreglo[i].ObtenerDni())and(i <= self.__cantidad):
-            i+=1
-        if(i <= self.__cantidad):
-            print(f"Apellido y Nombre: {self.__arreglo[i].ObtenerNom()}")
-            print(f"Edad: {self.__arreglo[i].ObtenerEdad()}")
-            gestorNacimientos.MostrarNacimientos(dni)
-    def ObtenerArreglo(self):
-        return self.__arreglo
+       for i in range (self.__cantidad):
+            if dni == self.__arreglo[i].ObtenerDni():
+                print(f"Apellido y Nombre: {self.__arreglo[i].ObtenerNom()}")
+                print(f"Edad: {self.__arreglo[i].ObtenerEdad()}")
+                gestorNacimientos.MostrarNacimientos(dni)
+                
+
+ 
     def BuscarPartosMultiples(self, gestorNacimientos):
         j=0
         print("Los datos de las mamas con partos múltiples son:")
