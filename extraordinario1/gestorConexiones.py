@@ -40,8 +40,11 @@ class GestorConexiones:
             if c.getIdJugador() == pos.getIdJugador():
                print(f"{c.getDireccionIp()}   {c.getNombreDelJuego()}   {c.getFecha()}   {c.getHoraDeInicio()}   {c.getHoraDeFin()}")
                th+= c.getHoraDeFin()-c.getHoraDeInicio()
-        print(f"total horas: {th} horas en exceso: {th - pos.getTiempoLimite()}")
-        if th > pos.getTiempoLimite():
+        print(f"total horas: {th}")
+        he = th - pos.getTiempoLimite()
+        
+        if he > 0: 
+            print(f"horas en exceso: {he}")
             if pos.getPlan() == "Basico":
                 importe = pos.getImporteBasico() * 1.25
             elif pos.getPlan() == "Completo":
@@ -49,6 +52,8 @@ class GestorConexiones:
             elif pos.getPlan() == "Extendido":
                 importe = pos.getImporteBasico() * 1.40
             print(f"importe: {importe}")
+        else:
+            print(f"no hay horas en exceso \n importe: {pos.getImporteBasico()}")
             
     def inciso2(self, juego, gg):
         b= False
