@@ -63,7 +63,7 @@ class GestorConexiones:
             print("el juego no existe")
                 
     def ordenar(self):
-        self.__arregloConexiones.sort()
+        return self.__arregloConexiones.sort()
         
           
     def comparar(self, g):
